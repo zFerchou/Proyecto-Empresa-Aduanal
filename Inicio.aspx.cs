@@ -72,7 +72,7 @@ public partial class Inicio : System.Web.UI.Page
 
         if (lstUsuarioSoporte.Count > 0)
         {
-            rSoporte = controller.getCountReportesSoporte(idUsuario, lstUsuarioSoporte,lstUsuarioTipo);
+            rSoporte = controller.getCountReportesSoporte(idUsuario, lstUsuarioSoporte, lstUsuarioTipo);
             if (rSoporte > 0)
             {
                 res += "<a href='javascript:;' onclick='javascript:getReportesSoportes();' class='divBlanco pdtes'><span id='icon-90' class='configuracion verde'> SOPORTES ADUANALES</span> <span class='divMiniBlanco txt-verde'>" + rSoporte + "</span></a>";
@@ -92,40 +92,40 @@ public partial class Inicio : System.Web.UI.Page
                              select roluser).Count();
 
         //si el resultado es mayor a 0, indica que el usuario cuenta con permisos para dar soporte a incidencias      
-        if (queryRolSoporte > 0 || lstRolusuario > 0 )
+        if (queryRolSoporte > 0 || lstRolusuario > 0)
         {
             //se llaman los mettodos para contar el numero de incidencias se encuentran en los estatus 1,2,3,4
-            rSinAsignar = controller.getCountReporteSinAsignar(idUsuario, queryRolSoporte,lstUsuarioTipo);
+            rSinAsignar = controller.getCountReporteSinAsignar(idUsuario, queryRolSoporte, lstUsuarioTipo);
             rAsignados = controller.getCountReportesAsignados(idUsuario, queryRolSoporte, lstUsuarioSoporte);
             rPorValidar = controller.getCountReportesPorValidar(idUsuario, queryRolSoporte, lstUsuarioSoporte);
             rSprint = controller.getCountReporteSinAsignarSprint(idUsuario, queryRolSoporte, lstUsuarioTipo);
             rHistorico = controller.getCountReporteSinAsignarHistorico(idUsuario, queryRolSoporte, lstUsuarioTipo);
             //si la llamada al metodo devuelve mayor a 0 se pinta el div.
-            if (rSinAsignar > 0 )
+            if (rSinAsignar > 0)
             {
                 res += "<a href='javascript:;' onclick='javascript:getReportesSinAsignar();' class='divBlanco pdtes'><label id='icon-25' class='configuracion verde tipo-ticket'>TICKETS SIN ASIGNAR <label class='txt-azul qty-tickets'>" + rSinAsignar + "</label></label></a>";
                 bandera = true;
             }
 
-            if (rAsignados > 0 )
+            if (rAsignados > 0)
             {
                 res += "<a href='javascript:;' onclick='javascript:getReportesAsignados();' class='divBlanco pdtes'><label id='icon-25' class='asig_equipo verde tipo-ticket'>TICKETS ASIGNADOS <label class='txt-azul qty-tickets'>" + rAsignados + "</label></label></a>";
                 bandera = true;
             }
 
-            if (rPorValidar > 0 ) 
+            if (rPorValidar > 0)
             {
                 res += "<a href='javascript:;' onclick='javascript:getReportesPorValidar();' class='divBlanco pdtes'><label id='icon-25' class='validar verde tipo-ticket'>TICKETS POR VALIDAR <label class='txt-azul qty-tickets'>" + rPorValidar + "</label></label></a>";
                 bandera = true;
             }
 
-            if (rSprint > 0 )
+            if (rSprint > 0)
             {
                 res += "<a href='javascript:;' onclick='javascript:getReportesSinAsignarSprint();' class='divBlanco pdtes'><label id='icon-25' class='validar verde tipo-ticket'>SPRINT BACKLOG <label class='txt-azul qty-tickets'>" + rSprint + "</label></label></a>";
                 bandera = true;
             }
 
-            if (rHistorico > 0 )
+            if (rHistorico > 0)
             {
                 res += "<a href='javascript:;' onclick='javascript:getReportesSinAsignarHistorico();' class='divBlanco pdtes'><label id='icon-25' class='validar verde tipo-ticket'>TICKETS HISTORICOS <label class='txt-azul qty-tickets'>" + rHistorico + "</label></label></a>";
                 bandera = true;
@@ -139,7 +139,7 @@ public partial class Inicio : System.Web.UI.Page
                                where rol.idRolERPM == 1 && rol.idUsuario == idUsuario
                                select rol).Count();
         //si el resultado de la consulta es mayor a 0 se verifica que pendientes tiene el usuario en sesion en los diferenetes estatus de incidencias
-        if (queryRolGenerar > 0 )
+        if (queryRolGenerar > 0)
         {
             //invoca los metodos para obtener la cantidad de incidencias
             //cantidad de incidencias creadas
@@ -419,7 +419,7 @@ public partial class Inicio : System.Web.UI.Page
     /// <param name="sFolioV"></param>
     /// <returns>objeto view_Reporte</returns>
     [WebMethod]
-    public static view_Reporte consultaReporteUsuarioVinculado( string sFolioV)
+    public static view_Reporte consultaReporteUsuarioVinculado(string sFolioV)
     {
         controllerRespuesta = new ControllerRespuestaReporte();
         var resultado = controllerRespuesta.consultaReporteUsuario(0, sFolioV);
@@ -496,7 +496,7 @@ public partial class Inicio : System.Web.UI.Page
 
         //Se agrega condición  tipoReporte.idTipoReporte <13 para cuando sea idTipoIncidencia= 14 tambien sea considerado 
 
-        if (tipoReporte.idTipoReporte >= 5 && tipoReporte.idTipoReporte <13)
+        if (tipoReporte.idTipoReporte >= 5 && tipoReporte.idTipoReporte < 13)
         {
             var idRol = (from rol in erp.tRolSoporte
                          where rol.idSoporte == tipoReporte.idTipoReporte
@@ -508,18 +508,18 @@ public partial class Inicio : System.Web.UI.Page
            " WHERE idEmpleado not in (select idResponsable from tResponsableReporte where idReporte=" + idReporte + ") and idEmpleado!=" + idUser + "" +
            " and idRolERPM =" + idRol + " and idGrupo=" + tipoReporte.idERPGrupo + "";
         }
-        else 
+        else
         {
-            
 
-            
 
-                query = "SELECT distinct idEmpleado, nombreCompleto" +
-                   " FROM vUsuariosERPM vista JOIN tRolUsuarioERPM tr ON tr.idUsuario=vista.idEmpleado " +
-                   " left join tResponsableReporte trp on trp.idResponsable=tr.idUsuario " +
-                   " WHERE idEmpleado not in (select idResponsable from tResponsableReporte where idReporte=" + idReporte + ") and idEmpleado!=" + idUser + "" +
-                   " and idRolERPM =3";
-       
+
+
+            query = "SELECT distinct idEmpleado, nombreCompleto" +
+               " FROM vUsuariosERPM vista JOIN tRolUsuarioERPM tr ON tr.idUsuario=vista.idEmpleado " +
+               " left join tResponsableReporte trp on trp.idResponsable=tr.idUsuario " +
+               " WHERE idEmpleado not in (select idResponsable from tResponsableReporte where idReporte=" + idReporte + ") and idEmpleado!=" + idUser + "" +
+               " and idRolERPM =3";
+
         }
 
         obtener = sp.recuperaRegistros(query);
@@ -549,7 +549,8 @@ public partial class Inicio : System.Web.UI.Page
     }
 
     [WebMethod]
-    public static bool enviarAvance(int idReporte, string comentario, string nombreArchivo, string idUsuario) {
+    public static bool enviarAvance(int idReporte, string comentario, string nombreArchivo, string idUsuario)
+    {
 
         controllerRespuesta = new ControllerRespuestaReporte();
         util = new Utileria();

@@ -91,7 +91,8 @@ public partial class index : System.Web.UI.Page
         //}
     }
 
-    public static void insertaLog(int idUsuario) {
+    public static void insertaLog(int idUsuario)
+    {
         ERPManagementDataContext erp = new ERPManagementDataContext();
         tLogIngresoERPM tlog = new tLogIngresoERPM();
 
@@ -114,10 +115,10 @@ public partial class index : System.Web.UI.Page
             if (Convert.ToString(Session["Captcha"]) == txtCaptchaText.Text.Trim())
             {
                 success = true;
-            }            
+            }
         }
 
-       
+
         if (success)
         {
 
@@ -135,13 +136,14 @@ public partial class index : System.Web.UI.Page
                 lblErrorCaptcha.Text = "<div class='center width98 bg-alert' id='divSuccess' style='background-color:green;font-size: 11px;'><span id='icon-25' class='success blanco'></span>TE ENVIAMOS UNA NUEVA CONTRASEÑA A TU CORREO.</div>";
                 lblErrorCaptcha.ForeColor = System.Drawing.Color.Green;
             }
-            else {
+            else
+            {
                 lblErrorCaptcha.Visible = true;
                 lblErrorCaptcha.Text = "<div class='center width98 bg-alert' id='divSuccess' style='font-size: 11px;'><span id='icon-25' class='warning blanco'></span>Ingresa el usuario.</div>";
-            }     
+            }
         }
         else
-        {            
+        {
             UpdateCaptchaText();
             lblErrorCaptcha.Visible = true;
             lblErrorCaptcha.Text = "<div class='center width98 bg-alert' id='divError' style='font-size: 11px;'><span id='icon-25' class='warning blanco'></span>CÓDIGO INCORRECTO.</div>";
@@ -152,7 +154,7 @@ public partial class index : System.Web.UI.Page
     protected void btnReGenerate_Click(object sender, EventArgs e)
     {
         UpdateCaptchaText();
-       
+
     }
 
     private void UpdateCaptchaText()
@@ -161,14 +163,15 @@ public partial class index : System.Web.UI.Page
         lblError.Visible = false;
         //1) genera el codigo del captcha al cargar el index y lo guarda en Session["Captcha"].
         Session["Captcha"] = Guid.NewGuid().ToString().Substring(0, 6);
-        if (IsPostBack) {
+        if (IsPostBack)
+        {
             lblError.Visible = true;
             Session["Captcha"] = Guid.NewGuid().ToString().Substring(0, 6);
             UpdatePanel1.Update();
             lblNewCaptcha.Visible = true;
             lblNewCaptcha.Text = "<p class='mensaje'>" + Convert.ToString(Session["Captcha"] = Guid.NewGuid().ToString().Substring(0, 6)) + "</p>";
             //string text = "<label style='font - size: 40px; color: white;font - family: Verdana;font - weight: 100;'>"+ Convert.ToString(Session["Captcha"] = Guid.NewGuid().ToString().Substring(0, 6)) + "</label>";
-        }           
+        }
     }
 
     public void recuperarContrasenia(string usuario)
@@ -190,7 +193,6 @@ public partial class index : System.Web.UI.Page
         ERPManagementRHDataContext sistemas = new ERPManagementRHDataContext();
         #endregion
         /*******************************/
-        //HttpContext.Current.Session["logged"] = true; // esto lo añadi jk98
         try
         {
             //Encriptamos la contraseña
@@ -201,8 +203,9 @@ public partial class index : System.Web.UI.Page
                            select vu).FirstOrDefault();
             view_ValidarUsuario validarUsuario = new view_ValidarUsuario();
             ERPManagementDataContext er = new ERPManagementDataContext();
+            HttpContext.Current.Session["logged"] = true; // para DDBB Local
 
-            
+            /*
             var validacion = (from vUser in er.view_ValidarUsuario
                               where vUser.idUsuario == usuario.idUsuario
                               select vUser).Count();
@@ -244,14 +247,14 @@ public partial class index : System.Web.UI.Page
                             }
 
 
-                            /***************Asignamos las credenciales a la lista****************/
+                            0***************Asignamos las credenciales a la lista****************0
                             session.Add(usu.nombre + " " + usu.apellidoPaterno);//nombre
                             session.Add(usu.idUsuario.ToString());//id
                             session.Add(usu.idEstatusUsuario.ToString());//status
                             session.Add(":)");//coinciden
                             session.Add(":)");//existe
                             session.Add(":)");//activo
-                            /********************************************************************/
+                            0********************************************************************0
                         }//End for
                     }
                     else {
@@ -263,12 +266,11 @@ public partial class index : System.Web.UI.Page
                         session.Add(":'(");//activo
                     }//End If                
             }//End If Validation
-            
+            */
         }
-
         catch (Exception ex)
         {
-            //Si marca excepción*
+            /*Si marca excepción*/
             session.Add(":'(");//nombre
             session.Add(":'(");//id
             session.Add(":'(");//status
