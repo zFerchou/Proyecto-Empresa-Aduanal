@@ -1,0 +1,123 @@
+﻿.listadoConsulta {
+    border: 1px solid #006680;
+    background: #FFFFFF;
+    border-radius: 5px;
+    width: 84%%;
+    height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 30px;
+    transition: all .3s;
+    color: #1d6688;
+}
+
+.listadoConsulta:hover 
+{
+    background: #1d6688;
+    color: white;
+}
+.input200 {
+    width: 190px !important;
+}
+#divOpciones, #divResultados {
+    background-color: white !important;
+}
+#btnBorrar {
+  margin-left: 44%;
+}
+#filtrosAsignados, #filtrosSinAsigar {
+    background-color:white !important;
+    border-radius:10px;    
+}
+
+.margin {
+    margin-left: 10px;
+}
+.btnGenerarPDF {
+    cursor:pointer;
+}
+.usuarios {
+    cursor:pointer;
+}
+.margin-top {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.margin-bottom {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#divEstatus {
+    margin-right:10px;
+    /*border-left: 2px solid #1d6687;*/
+    /*border-right: 2px solid #1d6687;*/
+
+    /*-webkit-box-shadow: 5px 0 1px -2px #888;
+            box-shadow: 5px 0 1px -2px #888;*/
+    margin-top: 30px;
+}
+#divTiposReportes {
+    border-left: 2px solid #1d6687;
+    /*border-right: 2px solid #1d6687;*/
+    /*-webkit-box-shadow: 5px 0 1px -2px #888;
+            box-shadow: 5px 0 1px -2px #888;*/
+    margin-top: 30px;
+}
+#divBotones {
+    margin-top:-50px;
+    /*margin-left:80.5%;*/
+}
+/*#btnBuscar, #btnVerTodos {
+    margin-top: 93px;
+}*/
+
+#divBtnPDF {
+  margin-top: 10px;
+  height:50px;
+}
+
+#divBtnBuscar {
+  margin-right: -36px;
+  margin-top: 23px;
+}
+
+#lblFechaReporte, #lblFechaPropuesta, #lblAsunto, #lblDescripcion {    
+    margin:5px auto;
+    margin-left:9px;
+}
+
+.btnBorrar {
+    margin-left: 16% !important;
+    cursor:pointer;
+}
+
+.requerido-evidencia{
+    background-color: red;
+    padding: 6px 12px;
+    border-radius: 4px;
+    position: absolute;
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	position: absolute;
+	font-size: 12px;
+
+}
+
+.requerido-evidencia:before{
+        content: '';
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid red;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        left: 4px;
+        position: absolute;
+        top: -14px;
+    }
+    
+    #tblDetalleIngresos tr > *:nth-child(3), #tblDetalleIngresos tr > *:nth-child(4) {
+    display: none;
+}

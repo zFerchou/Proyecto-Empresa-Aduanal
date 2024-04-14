@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERP Management</title>
+    <link rel="icon" type="image/png" href="images/logos/favicon-nad.png" />
+    <asp:Literal ID="ltHead" runat="server"></asp:Literal>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <form id="form1" runat="server">
+
+
+        
+        <div id="header-layer">
+        <div class="head">
+                <asp:Label ID="lblImgLogo" runat="server"></asp:Label>
+            <ul id="nav-top">
+			    <li class="username"><span id="icon-25" class="usuario_logueado">Bienvenido(a)
+                            &nbsp;<asp:Label ID="lblUsuario" runat="server"></asp:Label></span></li>
+			    <li class="logout"><asp:LinkButton runat="server" ID="linkCerrarSesion" 
+                        onclick="linkCerrarSesion_Click"><span id="icon-25" class="cerrar_sesion animation-ico">Cerrar Sesión</span></asp:LinkButton></li>
+		    </ul>
+        </div>
+
+        <div class="menu_bar">
+			<a href="#" class="bt-menu txt-right">ERP Management<span id="icon-47" class="list_dist blanco"></span></a>
+		</div>
+        <asp:Label ID="lblMenu" runat="server"></asp:Label>
+        
+    </div>
+        
+
+        <!-- Inicio body -->
+        <div id="content-layer">
+	        <div class="content">
+                <asp:ContentPlaceHolder id="body" runat="server" ClientIDMode="Static">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <!-- Fin body -->
+
+        <asp:Label ID="lblFooter" runat="server"></asp:Label>
+    </form>
+</body>
+</html>

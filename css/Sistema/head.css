@@ -1,0 +1,57 @@
+﻿/*-------------------------------------------------- HEADER -------------------------------------------------------*/
+/*-------------------------------------------------- HEADER -------------------------------------------------------*/
+/*-------------------------------------------------- HEADER -------------------------------------------------------*/
+#header-layer{
+	
+	width:100%;
+	max-width:100%;
+	background:#e6e8eb;
+	height:160px;
+}
+.logo-sistema
+{
+    width:140px;
+}
+.head{
+	
+	width:auto;
+	min-width:80%;
+	max-height:95%;
+	height:55px;
+	margin:0px auto;
+	padding:20px 35px;
+	clear:both;
+	
+}
+.head img{float:left;}
+/*----- NAV - TOP ---*/
+#nav-top{
+	
+	width:auto; 
+	height:36px;
+	background:#ffffff;
+	float:right;
+	list-style:none;
+	padding:5px 10px;
+	margin:10px 0px 0px 0px;
+	
+	border-radius:30px;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+
+}
+#nav-top li{float:left;margin:1px auto 0px;height:30px; padding-top:5px;}
+#nav-top li, #nav-top li a{color:#878a8c;text-decoration:none;}
+#nav-top li a:hover{color:#3b6170;}
+#nav-top li.username{border-right:1px solid #444749;padding-right:15px;}
+#nav-top li.logout{margin-left:10px;}
+
+/*------ animacion en el icono de cerrar sesion -----*/
+.logout #icon-25.cerrar_sesion:hover{background-position:0px -108px!important;}
+
+
+
+
+
+
+

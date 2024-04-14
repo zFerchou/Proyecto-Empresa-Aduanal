@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.Script.Serialization;
+using System.Web.Services;
+
+public class Historia
+{
+    public int idHistoriasALiberar { get; set; }
+    public int idReporte { get; set; }
+    public int idSistema { get; set; }
+    public DateTime fechaPropuestaOwner { get; set; }
+    public DateTime fechaPropuestaImplement { get; set; }
+    public int idEstatus { get; set; }
+    public int puntosDeHistoria { get; set; }
+}
+
+public partial class Configuracion_Implementador_sistema : System.Web.UI.Page
+{
+    private SqlConnection conn;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            Master.generaHeader("../../");
+        }
+    }
+
+    [WebMethod]
+    public static string ObtenerHistoriasAgendadas()
+    {
+        List<Historia> historias = new List<Historia>();
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSGICE"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tHistoriasALiberar WHERE idEstatus = 4", conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                historias.Add(new Historia
+                {
+                    idHistoriasALiberar = Convert.ToInt32(row["idHistoriasALiberar"]),
+                    idReporte = Convert.ToInt32(row["idReporte"]),
+                    idSistema = Convert.ToInt32(row["idSistema"]),
+                    fechaPropuestaOwner = Convert.ToDateTime(row["fechaPropuestaOwner"]),
+                    fechaPropuestaImplement = Convert.ToDateTime(row["fechaPropuestaImplement"]),
+                    idEstatus = Convert.ToInt32(row["idEstatus"]),
+                    puntosDeHistoria = Convert.ToInt32(row["puntosDeHistoria"])
+                });
+            }
+        }
+
+        var serializer = new JavaScriptSerializer();
+        return serializer.Serialize(historias);
+    }
+}

@@ -1,0 +1,159 @@
+﻿/*cards*/
+
+.card{
+border: 1px solid gray;
+box-shadow: 1px 1px 3px #888;
+border-top: 10px solid #1d6687;
+padding: 10px;
+margin: 5px;
+}
+
+img.img-card{
+display:block;
+margin:auto;
+width: 145px;
+height: 75px;
+}
+
+h1.h1-card{
+font-weight: lighter;
+margin-left: 100px;
+margin-top: -70px;
+text-align: center;
+}
+
+p.p-card{
+margin: 10px;
+font-family: segoe ui;
+line-height: 1.4em;
+font-size: 1.2em;
+}
+
+.borde
+{
+border: 1px solid black;
+margin:5px;
+padding:5px;
+}
+    
+.width33
+{
+width:33%;
+}
+    
+#content-layer .content {
+overflow: auto !important;
+}
+    
+.bordeRequerido
+{
+    border:2px solid red !important;
+    margin:1px;
+}
+
+.errorResp
+{
+    background-color: red;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #fff;
+    margin-left: 50px;
+    margin-top: 0px;
+    position: absolute;
+    font-size: 13px;
+}
+.errorResp:before
+{
+    content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid red;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    left: 4px;
+    position: absolute;
+    top: -14px;
+}
+    
+.input120 {
+    width: 120px;
+    margin: 10px 0px;
+    
+}
+    
+.field 
+{
+    margin:2%;
+}
+        
+.field2 
+{
+    margin:5%;
+}
+        
+.with88
+{
+    width:88%;
+}
+            
+.flotante {
+        position:fixed;
+        bottom:18%;
+        right:11.5%;
+        height:20px;
+        width:auto;
+}
+.flotanteRechazar {
+        position:fixed;
+        bottom:18%;
+        right:4%;
+        height:20px;
+        width:auto;
+}
+
+.bg-primary {
+    background: -moz-linear-gradient(top, #195b72, #2181a3);
+    background: linear-gradient(to bottom, #195b72, #2181a3);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#195b72), to(#2181a3));
+    border-radius: 3px;
+    padding: 5px;
+    color: #FFFFFF !important;
+}
+
+.alto
+{
+    min-height: 8% !important;
+}
+
+.requeridoComentario{
+    background-color: red;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #fff;
+    margin-left: -250px;
+    margin-top: 90px;
+    position: absolute;
+    font-size: 13px;
+}
+    
+.requeridoComentario:before{
+    content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid red;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    left: 4px;
+    position: absolute;
+    top: -14px;
+}
+#folior{
+    color:#FFFFFF;
+}
+.field3 
+{
+    margin:2%;
+}
+.requeridoResp
+{
+    border:2px solid red !important;
+    margin:1px;
+    }

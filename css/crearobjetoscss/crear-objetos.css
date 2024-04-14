@@ -1,0 +1,10 @@
+﻿#ObjContent
+{ border-top-style: dashed;border-right-style: double; border-bottom-style: dotted; border-left-style: solid;}
+
+.btn.azul.shadow2.btn-entrar
+{margin-left: 350px;}
+
+#textoMsj,#errorNomObjeto,#errorScript,#errorDescripcion,#errorNomSistema,#errorNomSistemaReq{color:Red; font-weight:bold; font-size:12px;cursor:pointer !important}
+
+label{font-size:15px; font-weight:bolder}
+    

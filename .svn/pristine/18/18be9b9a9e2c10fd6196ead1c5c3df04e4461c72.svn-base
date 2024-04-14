@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBSGICE_ERP" Class="ERPManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.cPrioridadReporte" Member="cPrioridadReporte">
+    <Type Name="cPrioridadReporte">
+      <Column Name="idPrioridadReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombrePrioridad" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="cPrioridadReporte_tReporte" Member="tReporte" ThisKey="idPrioridadReporte" OtherKey="idPrioridad" Type="tReporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cSistemas" Member="cSistemas">
+    <Type Name="cSistemas">
+      <Column Name="idSistema" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nomenglatura" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nomenclaturaDB" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="cSistemas_tERPGrupoSistema" Member="tERPGrupoSistema" ThisKey="idSistema" OtherKey="idSistema" Type="tERPGrupoSistema" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cTipoResponsable" Member="cTipoResponsable">
+    <Type Name="cTipoResponsable">
+      <Column Name="idTipoResponsable" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreTipoResponsable" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="cTipoResponsable_tResponsableReporte" Member="tResponsableReporte" ThisKey="idTipoResponsable" OtherKey="idTipoResponsable" Type="tResponsableReporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tResponsableReporte" Member="tResponsableReporte">
+    <Type Name="tResponsableReporte">
+      <Column Name="idResponsableReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idResponsable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoResponsable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="cTipoResponsable_tResponsableReporte" Member="cTipoResponsable" ThisKey="idTipoResponsable" OtherKey="idTipoResponsable" Type="cTipoResponsable" IsForeignKey="true" />
+      <Association Name="tReporte_tResponsableReporte" Member="tReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tRolesERPM" Member="tRolesERPM">
+    <Type Name="tRolesERPM">
+      <Column Name="idRolERPM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="pagina" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="isMenu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tRolesERPM_tRolPuestoERPM" Member="tRolPuestoERPM" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tRolPuestoERPM" />
+      <Association Name="tRolesERPM_tRolUsuarioERPM" Member="tRolUsuarioERPM" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tRolUsuarioERPM" />
+      <Association Name="tRolesERPM_tUsuarioSoporte" Member="tUsuarioSoporte" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tUsuarioSoporte" />
+      <Association Name="tRolesERPM_tPuestoSoporte" Member="tPuestoSoporte" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tPuestoSoporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cTipoReporte" Member="cTipoReportes">
+    <Type Name="cTipoReporte">
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreTipoReporte" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="clave" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Association Name="cTipoReporte_tRolSoporte" Member="tRolSoporte" ThisKey="idTipoReporte" OtherKey="idSoporte" Type="tRolSoporte" />
+      <Association Name="cTipoReporte_tReporte" Member="tReporte" ThisKey="idTipoReporte" OtherKey="idTipoReporte" Type="tReporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tRolPuestoERPM" Member="tRolPuestoERPM">
+    <Type Name="tRolPuestoERPM">
+      <Column Name="idRolPuestoERPM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idRolERPM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPuesto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tRolesERPM_tRolPuestoERPM" Member="tRolesERPM" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tRolesERPM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tRolUsuarioERPM" Member="tRolUsuarioERPM">
+    <Type Name="tRolUsuarioERPM">
+      <Column Name="idRolUsuarioERPM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idRolERPM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tRolesERPM_tRolUsuarioERPM" Member="tRolesERPM" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tRolesERPM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_reportePorId" Member="view_reportePorId">
+    <Type Name="view_reportePorId">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaReporte" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fechaPropuesta" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLogReporte" Member="tLogReporte">
+    <Type Name="tLogReporte">
+      <Column Name="idLogReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRespuesta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="idAccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cAccion_tLogReporte" Member="cAccion" ThisKey="idAccion" OtherKey="idAccion" Type="cAccion" IsForeignKey="true" />
+      <Association Name="tReporte_tLogReporte" Member="tReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cAccion" Member="cAccion">
+    <Type Name="cAccion">
+      <Column Name="idAccion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="accion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="cAccion_tLogReporte" Member="tLogReporte" ThisKey="idAccion" OtherKey="idAccion" Type="tLogReporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vObtenerGraficasReportes" Member="vObtenerGraficasReportes">
+    <Type Name="vObtenerGraficasReportes">
+      <Column Name="idEstatusReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreEstadoReporte" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cEstatusReporte" Member="cEstatusReporte">
+    <Type Name="cEstatusReporte">
+      <Column Name="idEstatusReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreEstadoReporte" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="cEstatusReporte_tRespuestaReporte" Member="tRespuestaReportes" ThisKey="idEstatusReporte" OtherKey="idEstadoReporte" Type="tRespuestaReporte" />
+      <Association Name="cEstatusReporte_tReporte" Member="tReporte" ThisKey="idEstatusReporte" OtherKey="idEstatusReporte" Type="tReporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLogAcceso" Member="tLogAccesos">
+    <Type Name="tLogAcceso">
+      <Column Name="idAcceso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vDetalleIngresos" Member="vDetalleIngresos">
+    <Type Name="vDetalleIngresos">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nomUsuario" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cEstatusCorreo" Member="cEstatusCorreo">
+    <Type Name="cEstatusCorreo">
+      <Column Name="idEstatusCorreo" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreEstatus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="cEstatusCorreo_tRespuestaReporte" Member="tRespuestaReportes" ThisKey="idEstatusCorreo" OtherKey="idEstatusCorreo" Type="tRespuestaReporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tRespuestaReporte" Member="tRespuestaReportes">
+    <Type Name="tRespuestaReporte">
+      <Column Name="idRespuestaReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idEstadoReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="evidencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaRespuesta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idEstatusCorreo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tRespuestaReporte_tLeccionesAprendidas" Member="tLeccionesAprendidas" ThisKey="idRespuestaReporte" OtherKey="idRespuestaReporte" Type="tLeccionesAprendidas" />
+      <Association Name="cEstatusReporte_tRespuestaReporte" Member="cEstatusReporte" ThisKey="idEstadoReporte" OtherKey="idEstatusReporte" Type="cEstatusReporte" IsForeignKey="true" />
+      <Association Name="cEstatusCorreo_tRespuestaReporte" Member="cEstatusCorreo" ThisKey="idEstatusCorreo" OtherKey="idEstatusCorreo" Type="cEstatusCorreo" IsForeignKey="true" />
+      <Association Name="tReporte_tRespuestaReporte" Member="tReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_RespuestaReporte" Member="view_RespuestaReportes">
+    <Type Name="view_RespuestaReporte">
+      <Column Name="idEstadoReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idEstatusCorreo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="idRespuestaReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fechaPropuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaReporte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="evidencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_Responsables" Member="view_Responsables">
+    <Type Name="view_Responsables">
+      <Column Name="idResponsable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreCompleto" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoResponsable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idEstatusReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tJustificacion" Member="tJustificacion">
+    <Type Name="tJustificacion">
+      <Column Name="idJustificacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="justificacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="tReporte_tJustificacion" Member="tReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUsuariosERPMGrupos" Member="vUsuariosERPMGrupos">
+    <Type Name="vUsuariosERPMGrupo">
+      <Column Name="nombreCompleto" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="contrasena" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idEmpleado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TipoUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idPuesto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreEmpresa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="grupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_grupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTipoUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRolERPM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTipoCorreoElectronico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="correoElectronico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vCorreoUsuarioIncidencia" Member="vCorreoUsuarioIncidencias">
+    <Type Name="vCorreoUsuarioIncidencia">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreUsaurioCreador" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="correoUsarioCreador" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idResponsable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreUsuarioResponsable" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="correoUsuarioResponsable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="fechaPropuestaTermino" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ValidarUsuario" Member="view_ValidarUsuario">
+    <Type Name="view_ValidarUsuario">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreCompleto" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="contrasena" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idRolERPM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_DetalleLogReporte" Member="view_DetalleLogReporte">
+    <Type Name="view_DetalleLogReporte">
+      <Column Name="idRespuestaReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idEstatusReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreEstadoReporte" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="fechaRespuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idResponsable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTipoResponsable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuarioResp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comentario" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_HistorialReporte" Member="view_HistorialReporte">
+    <Type Name="view_HistorialReporte">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="estatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="fechaRespuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vSistemasGrupo" Member="vSistemasGrupo">
+    <Type Name="vSistemasGrupo">
+      <Column Name="idSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nomenglatura" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tERPGrupo" Member="tERPGrupo">
+    <Type Name="tERPGrupo">
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idGrupoRH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="urlERP" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tERPGrupo_tLogGrupo" Member="tLogGrupo" ThisKey="idERPGrupo" OtherKey="idERPGrupo" Type="tLogGrupo" />
+      <Association Name="tERPGrupo_tERPGrupoSistema" Member="tERPGrupoSistema" ThisKey="idERPGrupo" OtherKey="idERPGrupo" Type="tERPGrupoSistema" />
+      <Association Name="tERPGrupo_tReporte" Member="tReporte" ThisKey="idERPGrupo" OtherKey="idERPGrupo" Type="tReporte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_PeticionSistemas" Member="view_PeticionSistemas">
+    <Type Name="view_PeticionSistemas">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLogGrupo" Member="tLogGrupo">
+    <Type Name="tLogGrupo">
+      <Column Name="idLogGrupo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tERPGrupo_tLogGrupo" Member="tERPGrupo" ThisKey="idERPGrupo" OtherKey="idERPGrupo" Type="tERPGrupo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tResponsableSistema" Member="tResponsableSistema">
+    <Type Name="tResponsableSistema">
+      <Column Name="idResponsableSistema" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idResponsable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idERPGrupoSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tERPGrupoSistema_tResponsableSistema" Member="tERPGrupoSistema" ThisKey="idERPGrupoSistema" OtherKey="idERPGrupoSistema" Type="tERPGrupoSistema" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ExisteBDEMP" Member="view_ExisteBDEMP">
+    <Type Name="view_ExisteBDEMP">
+      <Column Name="existe" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idAccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEstatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_HistorialBDEjeciciones" Member="view_HistorialBDEjeciciones">
+    <Type Name="view_HistorialBDEjeciciones">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="nomAccion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="fechaEjecución" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaTermino" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nomEstatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tiempo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ResponsableSistema" Member="view_ResponsableSistema">
+    <Type Name="view_ResponsableSistema">
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idERPGrupoSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idEmpleado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nombreCompleto" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cMonedaCuota" Member="cMonedaCuota">
+    <Type Name="cMonedaCuota">
+      <Column Name="idMoneda" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreMoneda" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="cMonedaCuota_tCuotas" Member="tCuotas" ThisKey="idMoneda" OtherKey="idMoneda" Type="tCuotas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCuotas" Member="tCuotas">
+    <Type Name="tCuotas">
+      <Column Name="idCuota" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idERPGrupoSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="cuota" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="idEstatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idMoneda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cMonedaCuota_tCuotas" Member="cMonedaCuota" ThisKey="idMoneda" OtherKey="idMoneda" Type="cMonedaCuota" IsForeignKey="true" />
+      <Association Name="tERPGrupoSistema_tCuotas" Member="tERPGrupoSistema" ThisKey="idERPGrupoSistema" OtherKey="idERPGrupoSistema" Type="tERPGrupoSistema" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ExisteBDSGC" Member="view_ExisteBDSGC">
+    <Type Name="view_ExisteBDSGC">
+      <Column Name="existe" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idAccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEstatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLogIngresoERPM" Member="tLogIngresoERPM">
+    <Type Name="tLogIngresoERPM">
+      <Column Name="idLogIngreso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ExisteBDSGRO" Member="view_ExisteBDSGRO">
+    <Type Name="view_ExisteBDSGRO">
+      <Column Name="existe" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idAccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEstatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ExisteBDSGCE" Member="view_ExisteBDSGCE">
+    <Type Name="view_ExisteBDSGCE">
+      <Column Name="existe" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idAccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEstatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLogEjecucionBD" Member="tLogEjecucionBD">
+    <Type Name="tLogEjecucionBD">
+      <Column Name="idLogEjecucionBDS" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idAccion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaEjecución" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaTermino" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="idEstatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tReporte_tLogEjecucionBD" Member="tReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_CuotasGrupSis" Member="view_CuotasGrupSis">
+    <Type Name="view_CuotasGrupSi">
+      <Column Name="idCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaInicio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="fechaVencimiento" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="cuota" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idERPGrupoSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tERPGrupoSistema" Member="tERPGrupoSistema">
+    <Type Name="tERPGrupoSistema">
+      <Column Name="idERPGrupoSistema" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="appCreada" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="scriptCreado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="URLSistema" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="idEstatusERPGrupoSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tERPGrupoSistema_tResponsableSistema" Member="tResponsableSistema" ThisKey="idERPGrupoSistema" OtherKey="idERPGrupoSistema" Type="tResponsableSistema" />
+      <Association Name="tERPGrupoSistema_tCuotas" Member="tCuotas" ThisKey="idERPGrupoSistema" OtherKey="idERPGrupoSistema" Type="tCuotas" />
+      <Association Name="tERPGrupo_tERPGrupoSistema" Member="tERPGrupo" ThisKey="idERPGrupo" OtherKey="idERPGrupo" Type="tERPGrupo" IsForeignKey="true" />
+      <Association Name="cSistemas_tERPGrupoSistema" Member="cSistemas" ThisKey="idSistema" OtherKey="idSistema" Type="cSistemas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLeccionesAprendidas" Member="tLeccionesAprendidas">
+    <Type Name="tLeccionesAprendidas">
+      <Column Name="idLeccionesAprendidas" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRespuestaReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tRespuestaReporte_tLeccionesAprendidas" Member="tRespuestaReporte" ThisKey="idRespuestaReporte" OtherKey="idRespuestaReporte" Type="tRespuestaReporte" IsForeignKey="true" />
+      <Association Name="tReporte_tLeccionesAprendidas" Member="tReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vLeccionesAprendidas" Member="vLeccionesAprendidas">
+    <Type Name="vLeccionesAprendidas">
+      <Column Name="idLeccionesAprendidas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaReporte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idUsuarioGenerador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idEstadoReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="evidencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaRespuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idUsuarioRespuesta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreCompleto" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="idRespuestaReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_DetalleReporte" Member="view_DetalleReporte">
+    <Type Name="view_DetalleReporte">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaReporte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaPropuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evidencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreTipoReporte" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idPrioridad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombrePrioridad" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nombreResponsable" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="correoResponsable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="area" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUsuariosERPM" Member="vUsuariosERPM">
+    <Type Name="vUsuariosERPM">
+      <Column Name="nombreCompleto" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="contrasena" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idEmpleado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TipoUsuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idPuesto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="correoElectronico" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tRolSoporte" Member="tRolSoporte">
+    <Type Name="tRolSoporte">
+      <Column Name="idRolSoporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idSoporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cTipoReporte_tRolSoporte" Member="cTipoReporte" ThisKey="idSoporte" OtherKey="idTipoReporte" Type="cTipoReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tUsuarioSoporte" Member="tUsuarioSoporte">
+    <Type Name="tUsuarioSoporte">
+      <Column Name="idUsuarioSoporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRolERPM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tRolesERPM_tUsuarioSoporte" Member="tRolesERPM" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tRolesERPM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPuestoSoporte" Member="tPuestoSoporte">
+    <Type Name="tPuestoSoporte">
+      <Column Name="idPuestoSoporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPuesto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRolERPM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tRolesERPM_tPuestoSoporte" Member="tRolesERPM" ThisKey="idRolERPM" OtherKey="idRolERPM" Type="tRolesERPM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUsuariosSoporte" Member="vUsuariosSoporte">
+    <Type Name="vUsuariosSoporte">
+      <Column Name="idUsuarioSoporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSoporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaReporte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prioridad" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Tipo Reporte]" Member="Tipo_Reporte" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Grupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idEstatusReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuarioCreador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_correoPersonalExternos" Member="view_correoPersonalExternos">
+    <Type Name="view_correoPersonalExternos">
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSoporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="correoElectrONico" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tActividadesTI" Member="tActividadesTI">
+    <Type Name="tActividadesTI">
+      <Column Name="iId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dFechaCarga" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="bEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="iIdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sUsuario" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="sNombre" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="dFecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sGrupo" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="sSistema" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="iHoras" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sDescripcion" Type="System.String" DbType="VarChar(2048) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_Reporte" Member="view_Reporte">
+    <Type Name="view_Reporte">
+      <Column Name="folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="fechaPropuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaReporte" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaPropuestaTermino" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evidencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idEstatusReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="folioVinculado" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="puntos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cEstatusSprint" Member="cEstatusSprint">
+    <Type Name="cEstatusSprint">
+      <Column Name="idEstatusSprint" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sEstatus" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="cEstatusSprint_tSprint" Member="tSprint" ThisKey="idEstatusSprint" OtherKey="iEstatus" Type="tSprint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cEstatusTicket" Member="cEstatusTicket">
+    <Type Name="cEstatusTicket">
+      <Column Name="idEstatusTicket" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sEstatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="cEstatusTicket_tTicketSprint" Member="tTicketSprint" ThisKey="idEstatusTicket" OtherKey="iEstatus" Type="tTicketSprint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tSprint" Member="tSprint">
+    <Type Name="tSprint">
+      <Column Name="idSprint" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iNumeroSprint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dFechaInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="dFechaFin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sMes" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="iEstatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sAnio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tSprint_tTicketSprint" Member="tTicketSprint" ThisKey="idSprint" OtherKey="idSprint" Type="tTicketSprint" />
+      <Association Name="cEstatusSprint_tSprint" Member="cEstatusSprint" ThisKey="iEstatus" OtherKey="idEstatusSprint" Type="cEstatusSprint" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tTicketSprint" Member="tTicketSprint">
+    <Type Name="tTicketSprint">
+      <Column Name="idTicketSprint" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSprint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iEstatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dFecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idResponsable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sMotivoReAsignacion" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="sAutoriza" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tSprint_tTicketSprint" Member="tSprint" ThisKey="idSprint" OtherKey="idSprint" Type="tSprint" IsForeignKey="true" />
+      <Association Name="cEstatusTicket_tTicketSprint" Member="cEstatusTicket" ThisKey="iEstatus" OtherKey="idEstatusTicket" Type="cEstatusTicket" IsForeignKey="true" />
+      <Association Name="tReporte_tTicketSprint" Member="tReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vReporteSprint" Member="vReporteSprint">
+    <Type Name="vReporteSprint">
+      <Column Name="Sprint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="[Capacidad SP]" Member="Capacidad_SP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Total de Historias]" Member="Total_de_Historias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Historias Asignadas]" Member="Historias_Asignadas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Historias en pruebas]" Member="Historias_en_pruebas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Historias Concluidas]" Member="Historias_Concluidas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Historias Traladadas]" Member="Historias_Traladadas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[SP Asignados]" Member="SP_Asignados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[SP Cumplidos]" Member="SP_Cumplidos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[% Avance]" Member="__Avance" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estatus" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tReporte" Member="tReporte">
+    <Type Name="tReporte">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaReporte" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaPropuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evidencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPrioridad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idERPGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEstatusReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fechaPropuestaTermino" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="calificacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTicketVinculado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iSprint" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoryPoints" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bHistorico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tReporte_tResponsableReporte" Member="tResponsableReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tResponsableReporte" />
+      <Association Name="tReporte_tLogReporte" Member="tLogReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tLogReporte" />
+      <Association Name="tReporte_tRespuestaReporte" Member="tRespuestaReporte" ThisKey="idReporte" OtherKey="idReporte" Type="tRespuestaReporte" />
+      <Association Name="tReporte_tJustificacion" Member="tJustificacion" ThisKey="idReporte" OtherKey="idReporte" Type="tJustificacion" />
+      <Association Name="tReporte_tLogEjecucionBD" Member="tLogEjecucionBD" ThisKey="idReporte" OtherKey="idReporte" Type="tLogEjecucionBD" />
+      <Association Name="tReporte_tLeccionesAprendidas" Member="tLeccionesAprendidas" ThisKey="idReporte" OtherKey="idReporte" Type="tLeccionesAprendidas" />
+      <Association Name="tReporte_tTicketSprint" Member="tTicketSprint" ThisKey="idReporte" OtherKey="idReporte" Type="tTicketSprint" />
+      <Association Name="tERPGrupo_tReporte" Member="tERPGrupo" ThisKey="idERPGrupo" OtherKey="idERPGrupo" Type="tERPGrupo" IsForeignKey="true" />
+      <Association Name="cEstatusReporte_tReporte" Member="cEstatusReporte" ThisKey="idEstatusReporte" OtherKey="idEstatusReporte" Type="cEstatusReporte" IsForeignKey="true" />
+      <Association Name="cPrioridadReporte_tReporte" Member="cPrioridadReporte" ThisKey="idPrioridad" OtherKey="idPrioridadReporte" Type="cPrioridadReporte" IsForeignKey="true" />
+      <Association Name="cTipoReporte_tReporte" Member="cTipoReporte" ThisKey="idTipoReporte" OtherKey="idTipoReporte" Type="cTipoReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vDetalleSprint" Member="vDetalleSprint">
+    <Type Name="vDetalleSprint">
+      <Column Name="iNumeroSprint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tipoReporte" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nomGrupo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sistema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Puntos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="asunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sEstatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(162) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaAsignacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Fecha Pase A Pruebas]" Member="Fecha_Pase_A_Pruebas" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comentario" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

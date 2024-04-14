@@ -1,0 +1,787 @@
+﻿/*--------------------------------------------- ICONS ----------------------------------------------------------------*/
+/*--------------------------------------------- ICONS ----------------------------------------------------------------*/
+/*--------------------------------------------- ICONS ----------------------------------------------------------------*/
+
+/*------ Tamaño ---> 25px x 36px ---------*/
+#icon-25{
+	
+	background:url('../images/icons/25/icons-blue.png') no-repeat left top;
+	-moz-background-size:25px 3888px;
+	-o-background-size:25px 3888px;
+	-webkit-background-size:25px 3888px;
+	background-size:25px 3888px;
+	padding:15px 0px 10px 25px!important;
+	top: 50%;
+	overflow:hidden;
+	/*width:25px!important;*/
+	line-height:25px;
+}
+
+/*------ colores de iconos ------*/
+#icon-25.azul{background:url('../images/icons/25/icons-blue.png') no-repeat left top;}
+#icon-25.blanco{background:url('../images/icons/25/icons-white.png') no-repeat left top;}
+#icon-25.rojo{background:url('../images/icons/25/icons-red.png') no-repeat left top;}
+#icon-25.verde{background:url('../images/icons/25/icons-green.png') no-repeat left top;}
+
+/*------ utilizar los iconos ------*/
+/*--- usuario logueado ---*/
+#icon-25.usuario_logueado{background-position:0px 0px!important;}
+/*--- usuarios ---*/
+#icon-25.usuarios{background-position:0px -36px!important;}
+/*--- cerrar sesion---*/
+#icon-25.cerrar_sesion{background-position:0px -72px!important;}
+/*--- permisos---*/
+#icon-25.permisos{background-position:0px -108px!important;}
+/*--- perfiles ---*/
+#icon-25.perfiles{background-position:0px -144px!important;}
+/*--- proceso ---*/
+#icon-25.procesos{background-position:0px -180px!important;}
+/*--- categoria ---*/
+#icon-25.categoria{background-position:0px -216px!important;}
+/*--- carpeta ---*/
+#icon-25.carpeta{background-position:0px -252px!important;}
+/*--- entrar ---*/
+#icon-25.entrar{background-position:0px -288px!important;}
+/*--- ayuda ---*/
+#icon-25.ayuda{background-position:0px -324px!important;}
+/*--- idioma ---*/
+#icon-25.idioma{background-position:0px -360px!important;}
+/*--- enviar ---*/
+#icon-25.enviar{background-position:0px -396px!important;}
+/*--- cancelar ---*/
+#icon-25.cancelar{background-position:0px -432px!important;}
+/*--- aceptar ---*/
+#icon-25.aceptar{background-position:0px -468px!important;}
+/*--- guardar ---*/
+#icon-25.guardar{background-position:0px -504px!important;}
+/*--- rechazar ---*/
+#icon-25.rechazar{background-position:0px -540px!important;}
+/*--- aprobar ---*/
+#icon-25.aprobar{background-position:0px -468px!important;}
+/*--- proceso ---*/
+#icon-25.proceso{background-position:0px -576px!important;}
+/*--- auditoria ---*/
+#icon-25.auditoria{background-position:0px -612px!important;}
+/*--- configuracion ---*/
+#icon-25.configuracion{background-position:0px -648px!important;}
+/*--- documentos relacionados ---*/
+#icon-25.docu_rel{background-position:0px -684px!important;}
+/*--- reporte ---*/
+#icon-25.reporte{background-position:0px -720px!important;}
+/*--- Listas de Distribución ---*/
+#icon-25.list_dist{background-position:0px -756px!important;}
+/*--- consultar ---*/
+#icon-25.consultar{background-position:0px -792px!important;}
+/*--- editar ---*/
+#icon-25.editar{background-position:0px -828px!important;}
+/*--- eliminar ---*/
+#icon-25.eliminar{background-position:0px -864px!important;}
+/*---boletin ---*/
+#icon-25.boletin{background-position:0px -900px!important;}
+/*--- organigrama ---*/
+#icon-25.organigrama{background-position:0px -936px!important;}
+/*--- vista previa ---*/
+#icon-25.vista_previa{background-position:0px -972px!important;}
+/*--- descargar ---*/
+#icon-25.descargar{background-position:0px -1008px!important;}
+/*--- subir ---*/
+#icon-25.subir{background-position:0px -1044px!important;}
+/*--- notificacion ---*/
+#icon-25.notificacion{background-position:0px -1080px!important;}
+/*--- cambiar flujo de aprobacion ---*/
+#icon-25.cambiar_flujo{background-position:0px -1116px!important;}
+/*--- cargas masivas ---*/
+#icon-25.cargas{background-position:0px -1152px!important;}
+/*--- evidencia ---*/
+#icon-25.evidencia{background-position:0px -1188px!important;}
+/*--- control ---*/
+#icon-25.control{background-position:0px -1224px!important;}
+/*--- riesgo ---*/
+#icon-25.riesgo{background-position:0px -1260px!important;}
+/*--- Viaticos ---*/
+#icon-25.viaticos{background-position:0px -1296px!important;}
+/*--- compras ---*/
+#icon-25.compras{background-position:0px -1332px!important;}
+/*--- gastos fijos ---*/
+#icon-25.gastos_fijos{background-position:0px -1368px!important;}
+/*--- caja chica ---*/
+#icon-25.caja_chica{background-position:0px -1404px!important;}
+/*--- roles ---*/
+#icon-25.roles{background-position:0px -1440px!important;}
+/*--- expediente ---*/
+#icon-25.expediente{background-position:0px -1476px!important;}
+/*--- pdf ---*/
+#icon-25.pdf{background-position:0px -1512px!important;}
+/*--- excel ---*/
+#icon-25.excel{background-position:0px -1548px!important;}
+/*--- imagen ---*/
+#icon-25.imagen{background-position:0px -1584px!important;}
+/*--- zip ---*/
+#icon-25.zip{background-position:0px -1620px!important;}
+/*--- word ---*/
+#icon-25.word{background-position:0px -1656px!important;}
+/*--- power point ---*/
+#icon-25.power_point{background-position:0px -1692px!important;}
+/*--- xml ---*/
+#icon-25.xml{background-position:0px -1728px!important;}
+/*--- agregar ---*/
+#icon-25.agregar{background-position:0px -1764px!important;}
+/*--- nuevo ---*/
+#icon-25.nuevo{background-position:0px -1800px!important;}
+/*--- cotejo ---*/
+#icon-25.cotejo{background-position:0px -1836px!important;}
+/*--- pendientes ---*/
+#icon-25.pendientes{background-position:0px -1872px!important;}
+/*--- solicitud_aprobada ---*/
+#icon-25.solicitud_aprobada{background-position:0px -1908px!important;}
+/*--- solicitud_enviada ---*/
+#icon-25.solicitud_enviada{background-position:0px -1944px!important;}
+/*--- solicitud_recibida ---*/
+#icon-25.solicitud_recibida{background-position:0px -1980px!important;}
+/*--- certificados de origen ---*/
+#icon-25.certificado_origen{background-position:0px -2016px!important;}
+/*--- hitorial ---*/
+#icon-25.historial{background-position:0px -2052px!important;}
+/*--- cerrar ---*/
+#icon-25.cerrar{background-position:0px -2088px!important;}
+/*--- warning ---*/
+#icon-25.warning{background-position:0px -2124px!important;}
+/*--- success ---*/
+#icon-25.success{background-position:0px -2160px!important;}
+/*--- error ---*/
+#icon-25.error{background-position:0px -2196px!important;}
+/*--- informacion ---*/
+#icon-25.informacion{background-position:0px -2232px!important;}
+/*--- actualizar ---*/
+#icon-25.actualizar{background-position:0px -2268px!important;}
+/*--- validar ---*/
+#icon-25.validar{background-position:0px -2304px!important;}
+/*--- pagar ---*/
+#icon-25.pagar{background-position:0px -2340px!important;}
+/*--- comprobar ---*/
+#icon-25.comprobar{background-position:0px -2376px!important;}
+/*--- semaforo rojo ---*/
+#icon-25.semaforo_rojo{background-position:0px -2412px!important;}
+/*--- semaforo_amarillo ---*/
+#icon-25.semaforo_amarillo{background-position:0px -2448px!important;}
+/*--- semaforo_blanco ---*/
+#icon-25.semaforo_blanco{background-position:0px -2484px!important;}
+/*--- semaforo_verde ---*/
+#icon-25.semaforo_verde{background-position:0px -2520px!important;}
+/*--- score_card ---*/
+#icon-25.score_card{background-position:0px -2556px!important;}
+/*--- orden de compra ---*/
+#icon-25.orden_compra{background-position:0px -2592px!important;}
+/*--- lider de proyecto ---*/
+#icon-25.lider{background-position:0px -2628px!important;}
+/*--- tratado ---*/
+#icon-25.tratado{background-position:0px -2664px!important;}
+/*--- catalogos ---*/
+#icon-25.catalogo{background-position:0px -2700px!important;}
+/*--- capacitacion ---*/
+#icon-25.capacitacion{background-position:0px -2736px!important;}
+/*--- incidencia ---*/
+#icon-25.incidencia{background-position:0px -2772px!important;}
+/*--- inicio ---*/
+#icon-25.inicio{background-position:0px -2808px!important;}
+/*--- buscar ---*/
+#icon-25.buscar{background-position:0px -2844px!important;}
+/*--- data_stage ---*/
+#icon-25.data_stage{background-position:0px -2880px!important;}
+/*--- edocuments ---*/
+#icon-25.edocuments{background-position:0px -2916px!important;}
+/*--- imprimir ---*/
+#icon-25.imprimir{background-position:0px -2952px!important;}
+/*--- propuesta ---*/
+#icon-25.propuesta{background-position:0px -2988px!important;}
+/*--- plan_pago ---*/
+#icon-25.plan_pago{background-position:0px -3024px!important;}
+/*--- plan_ejec ---*/
+#icon-25.plan_ejec{background-position:0px -3060px!important;}
+/*--- info_final ---*/
+#icon-25.info_final{background-position:0px -3096px!important;}
+/*--- encuesta ---*/
+#icon-25.encuesta{background-position:0px -3132px!important;}
+/*--- facturacion y pagos ---*/
+#icon-25.facturacion{background-position:0px -3168px!important;}
+/*--- cierre_folio ---*/
+#icon-25.cierre_folio{background-position:0px -3204px!important;}
+/*--- datos_fisc ---*/
+#icon-25.datos_fisc{background-position:0px -3240px!important;}
+/*--- pago_confirmado ---*/
+#icon-25.pago_confirmado{background-position:0px -3276px!important;}
+/*--- pago_x_confirmar ---*/
+#icon-25.pago_x_confirmar{background-position:0px -3312px!important;}
+/*--- activos_fijos ---*/
+#icon-25.activos_fijos{background-position:0px -3348px!important;}
+/*--- pc ---*/
+#icon-25.pc{background-position:0px -3384px!important;}
+/*--- marca ---*/
+#icon-25.marca{background-position:0px -3420px!important;}
+/*--- modelo ---*/
+#icon-25.modelo{background-position:0px -3456px!important;}
+/*--- proveedor ---*/
+#icon-25.proveedor{background-position:0px -3492px!important;}
+/*--- asig_equipo ---*/
+#icon-25.asig_equipo{background-position:0px -3528px!important;}
+/*--- ticket ---*/
+#icon-25.ticket{background-position:0px -3564px!important;}
+/*--- licencia ---*/
+#icon-25.licencia{background-position:0px -3600px!important;}
+/*--- empleado ---*/
+#icon-25.empleado{background-position:0px -3636px!important;}
+/*--- modificar ---*/
+#icon-25.modificar{background-position:0px -3672px!important;}
+/*--- agregar_carpeta ---*/
+#icon-25.agregar_carpeta{background-position:0px -3708px!important;}
+/*--- calendario ---*/
+#icon-25.calendario{background-position:0px -3744px!important;}
+/*--- doc_siguiente ---*/
+#icon-25.doc_siguiente{background-position:0px -3780px!important;}
+/*--- buscar_usuario ---*/
+#icon-25.buscar_usuario{background-position:0px -3816px!important;}
+/*--- adjuntar ---*/
+#icon-25.adjuntar{background-position:0px -3852px!important;}
+
+
+/*------ Termina Tamaño ---> 25px x 36px ---------*/
+
+/*------ Tamaño ---> 47px x 69px ---------*/
+#icon-47{
+	
+	background:url('../images/icons/47/icons-blue.png') no-repeat left top;
+	-moz-background-size:47px 7344px;
+	-o-background-size:47px 7344px;
+	-webkit-background-size:47px 7344px;
+	background-size:47px 7344px;
+	
+	padding:21px 0px 25px 47px!important;
+	left:.5em;
+	top: 50%;
+	text-indent: -99999px;
+	overflow: hidden;
+	/*width:90px!important;*/
+	/*position:absolute;*/
+	line-height:50px;
+	clear:both;
+}
+
+/*------ Clases para los diferentes colores de iconos ------*/
+#icon-47.azul{background:url('../images/icons/47/icons-blue.png') no-repeat left top;}
+#icon-47.blanco{background:url('../images/icons/47/icons-white.png') no-repeat left top;}
+#icon-47.rojo{background:url('../images/icons/47/icons-red.png') no-repeat left top;}
+#icon-47.verde{background:url('../images/icons/47/icons-green.png') no-repeat left top;}
+
+/*------ utilizar los iconos ------*/
+/*--- usuario logueado ---*/
+#icon-47.usuario_logueado{background-position:0px 0px!important;}
+/*--- usuarios ---*/
+#icon-47.usuarios{background-position:0px -68px!important;}
+/*--- cerrar_sesion ---*/
+#icon-47.cerrar_sesion{background-position:0px -136px!important;}
+/*--- permisos---*/
+#icon-47.permisos{background-position:0px -204px!important;}
+/*--- perfiles---*/
+#icon-47.perfiles{background-position:0px -272px!important;}
+/*--- procesos ---*/
+#icon-47.procesos{background-position:0px -340px!important;}
+/*--- categoria ---*/
+#icon-47.categoria{background-position:0px -408px!important;}
+/*--- carpeta ---*/
+#icon-47.carpeta{background-position:0px -476px!important;}
+/*--- entrar ---*/
+#icon-47.entrar{background-position:0px -544px!important;}
+/*--- ayuda ---*/
+#icon-47.ayuda{background-position:0px -612px!important;}
+/*--- idioma ---*/
+#icon-47.idioma{background-position:0px -680px!important;}
+/*--- enviar ---*/
+#icon-47.enviar{background-position:0px -748px!important;}
+/*--- cancelar ---*/
+#icon-47.cancelar{background-position:0px -816px!important;}
+/*--- aceptar ---*/
+#icon-47.aceptar{background-position:0px -884px!important;}
+/*--- guardar ---*/
+#icon-47.guardar{background-position:0px -952px!important;}
+/*--- rechazar ---*/
+#icon-47.rechazar{background-position:0px -1020px!important;}
+/*--- proceso ---*/
+#icon-47.proceso{background-position:0px -1088px!important;}
+/*--- auditoria ---*/
+#icon-47.auditoria{background-position:0px -1156px!important;}
+/*--- configuracion  ---*/
+#icon-47.configuracion {background-position:0px -1224px!important;}
+/*--- docu_rel ---*/
+#icon-47.docu_rel{background-position:0px -1292px!important;}
+/*--- reporte ---*/
+#icon-47.reporte{background-position:0px -1360px!important;}
+/*--- Listas de Distribución ---*/
+#icon-47.list_dist{background-position:0px -1428px!important;}
+/*--- consultar ---*/
+#icon-47.consultar{background-position:0px -1496px!important;}
+/*--- editar ---*/
+#icon-47.editar{background-position:0px -1564px!important;}
+/*--- eliminar ---*/
+#icon-47.eliminar{background-position:0px -1632px!important;}
+/*--- boletin ---*/
+#icon-47.boletin{background-position:0px -1700px!important;}
+/*---organigrama ---*/
+#icon-47.organigrama{background-position:0px -1768px!important;}
+/*--- vista_previa ---*/
+#icon-47.vista_previa{background-position:0px -1836px!important;}
+/*--- descargar ---*/
+#icon-47.descargar{background-position:0px -1904px!important;}
+/*--- subir ---*/
+#icon-47.subir{background-position:0px -1972px!important;}
+/*--- notificacion ---*/
+#icon-47.notificacion{background-position:0px -2040px!important;}
+/*--- cambiar_flujo ---*/
+#icon-47.cambiar_flujo{background-position:0px -2108px!important;}
+/*--- cargas ---*/
+#icon-47.cargas{background-position:0px -2176px!important;}
+/*--- evidencia ---*/
+#icon-47.evidencia{background-position:0px -2244px!important;}
+/*--- control ---*/
+#icon-47.control{background-position:0px -2312px!important;}
+/*--- criesgo ---*/
+#icon-47.riesgo{background-position:0px -2380px!important;}
+/*--- Viaticos ---*/
+#icon-47.viaticos{background-position:0px -2448px!important;}
+/*--- compras ---*/
+#icon-47.compras{background-position:0px -2516px!important;}
+/*--- gastos_fijos ---*/
+#icon-47.gastos_fijos{background-position:0px -2584px!important;}
+/*--- caja_chica ---*/
+#icon-47.caja_chica{background-position:0px -2652px!important;}
+/*--- roles ---*/
+#icon-47.roles{background-position:0px -2720px!important;}
+/*--- expediente ---*/
+#icon-47.expediente{background-position:0px -2788px!important;}
+/*--- pdf ---*/
+#icon-47.pdf{background-position:0px -2856px!important;}
+/*--- excel ---*/
+#icon-47.excel{background-position:0px -2924px!important;}
+/*--- imagen ---*/
+#icon-47.imagen{background-position:0px -2992px!important;}
+/*--- zip ---*/
+#icon-47.zip{background-position:0px -3060px!important;}
+/*--- word ---*/
+#icon-47.word{background-position:0px -3128px!important;}
+/*--- power_point ---*/
+#icon-47.power_point{background-position:0px -3196px!important;}
+/*--- xml ---*/
+#icon-47.xml{background-position:0px -3264px!important;}
+/*--- agregar ---*/
+#icon-47.agregar{background-position:0px -3332px!important;}
+/*--- nuevo ---*/
+#icon-47.nuevo{background-position:0px -3400px!important;}
+/*--- cotejo ---*/
+#icon-47.cotejo{background-position:0px -3468px!important;}
+/*--- pendientes ---*/
+#icon-47.pendientes{background-position:0px -3536px!important;}
+/*--- solicitud_aprobada ---*/
+#icon-47.solicitud_aprobada{background-position:0px -3604px!important;}
+/*--- solicitud_enviada ---*/
+#icon-47.solicitud_enviada{background-position:0px -3672px!important;}
+/*--- solicitud_recibida ---*/
+#icon-47.solicitud_recibida{background-position:0px -3740px!important;}
+/*--- certificados de origen ---*/
+#icon-47.certificado_origen{background-position:0px -3808px!important;}
+/*--- hitorial ---*/
+#icon-47.historial{background-position:0px -3876px!important;}
+/*--- cerrar ---*/
+#icon-47.cerrar{background-position:0px -3944px!important;}
+/*--- warning ---*/
+#icon-47.warning{background-position:0px -4012px!important;}
+/*--- success ---*/
+#icon-47.success{background-position:0px -4080px!important;}
+/*--- error ---*/
+#icon-47.error{background-position:0px -4148px!important;}
+/*--- informacion ---*/
+#icon-47.informacion{background-position:0px -4216px!important;}
+/*--- actualizar ---*/
+#icon-47.actualizar{background-position:0px -4284px!important;}
+/*--- validar ---*/
+#icon-47.validar{background-position:0px -4352px!important;}
+/*--- pagar ---*/
+#icon-47.pagar{background-position:0px -4420px!important;}
+/*--- comprobar ---*/
+#icon-47.comprobar{background-position:0px -4488px!important;}
+/*--- semaforo rojo ---*/
+#icon-47.semaforo_rojo{background-position:0px -4556px!important;}
+/*--- semaforo_amarillo ---*/
+#icon-47.semaforo_amarillo{background-position:0px -4624px!important;}
+/*--- semaforo_blanco ---*/
+#icon-47.semaforo_blanco{background-position:0px -4692px!important;}
+/*--- semaforo_verde ---*/
+#icon-47.semaforo_verde{background-position:0px -4760px!important;}
+/*--- score_card ---*/
+#icon-47.score_card{background-position:0px -4828px!important;}
+/*--- orden de compra ---*/
+#icon-47.orden_compra{background-position:0px -4896px!important;}
+/*--- lider de proyecto ---*/
+#icon-47.lider{background-position:0px -4964px!important;}
+/*--- tratado ---*/
+#icon-47.tratado{background-position:0px -5032px!important;}
+/*--- catalogos ---*/
+#icon-47.catalogo{background-position:0px -5100px!important;}
+/*--- capacitacion ---*/
+#icon-47.capacitacion{background-position:0px -5168px!important;}
+/*--- incidencia ---*/
+#icon-47.incidencia{background-position:0px -5236px!important;}
+/*--- inicio ---*/
+#icon-47.inicio{background-position:0px -5304px!important;}
+/*--- buscar ---*/
+#icon-47.buscar{background-position:0px -5372px!important;}
+/*--- data_stage ---*/
+#icon-47.data_stage{background-position:0px -5440px!important;}
+/*--- edocuments ---*/
+#icon-47.edocuments{background-position:0px -5508px!important;}
+/*--- imprimir ---*/
+#icon-47.imprimir{background-position:0px -5576px!important;}
+/*--- propuesta ---*/
+#icon-47.propuesta{background-position:0px -5644px!important;}
+/*--- plan_pago ---*/
+#icon-47.plan_pago{background-position:0px -5712px!important;}
+/*--- plan_ejec ---*/
+#icon-47.plan_ejec{background-position:0px -5780px!important;}
+/*--- info_final ---*/
+#icon-47.info_final{background-position:0px -5848px!important;}
+/*--- encuesta ---*/
+#icon-47.encuesta{background-position:0px -5916px!important;}
+/*--- facturacion y pagos ---*/
+#icon-47.facturacion{background-position:0px -5984px!important;}
+/*--- cierre_folio ---*/
+#icon-47.cierre_folio{background-position:0px -6052px!important;}
+/*--- datos_fisc ---*/
+#icon-47.datos_fisc{background-position:0px -6120px!important;}
+/*--- pago_confirmado ---*/
+#icon-47.pago_confirmado{background-position:0px -6188px!important;}
+/*--- pago_x_confirmar ---*/
+#icon-47.pago_x_confirmar{background-position:0px -6256px!important;}
+/*--- activos_fijos ---*/
+#icon-47.activos_fijos{background-position:0px -6324px!important;}
+/*--- pc ---*/
+#icon-47.pc{background-position:0px -6392px!important;}
+/*--- marca ---*/
+#icon-47.marca{background-position:0px -6460px!important;}
+/*--- modelo ---*/
+#icon-47.modelo{background-position:0px -6528px!important;}
+/*--- proveedor ---*/
+#icon-47.proveedor{background-position:0px -6596px!important;}
+/*--- asig_equipo ---*/
+#icon-47.asig_equipo{background-position:0px -6664px!important;}
+/*--- ticket ---*/
+#icon-47.ticket{background-position:0px -6732px!important;}
+/*--- licencia ---*/
+#icon-47.licencia{background-position:0px -6800px!important;}
+/*--- empleado ---*/
+#icon-47.empleado{background-position:0px -6868px!important;}
+/*--- modificar ---*/
+#icon-47.modificar{background-position:0px -6936px!important;}
+/*--- agregar_carpeta ---*/
+#icon-47.agregar_carpeta{background-position:0px -7004px!important;}
+/*--- calendario ---*/
+#icon-47.calendario{background-position:0px -7072px!important;}
+/*--- doc_siguiente ---*/
+#icon-47.doc_siguiente{background-position:0px -7140px!important;}
+/*--- buscar_usuario ---*/
+#icon-47.buscar_usuario{background-position:0px -7208px!important;}
+/*--- adjuntar ---*/
+#icon-47.adjuntar{background-position:0px -7276px!important;}
+
+
+
+
+/*------ Termina Tamaño ---> 47px x 69px ---------*/
+
+
+
+/*------ Termina Tamaño ---> 25px x 36px ---------*/
+
+/*------ Tamaño ---> 90px x 133px ---------*/
+#icon-90{
+	
+	background:url('../images/icons/90/icons-blue.png') no-repeat left top;
+	-moz-background-size:90px 13997px;
+	-o-background-size:90px 13997px;
+	-webkit-background-size:90px 13997px;
+	background-size:90px 13997px;
+	
+	padding:40px 0px 50px 90px!important;
+	left:.5em;
+	top: 50%;
+	text-indent: -99999px;
+	overflow: hidden;
+	/*width:90px!important;*/
+	/*position:absolute;*/
+	line-height:90px;
+	clear:both;
+}
+
+/*------ Clases para los diferentes colores de iconos ------*/
+#icon-90.azul{background:url('../images/icons/90/icons-blue.png') no-repeat left top;}
+#icon-90.blanco{background:url('../images/icons/90/icons-white.png') no-repeat left top;}
+#icon-90.rojo{background:url('../images/icons/90/icons-red.png') no-repeat left top;}
+#icon-90.verde{background:url('../images/icons/90/icons-green.png') no-repeat left top;}
+
+
+/*------ utilizar los iconos ------*/
+/*--- usuario logueado ---*/
+#icon-90.usuario_logueado{background-position:0px 0px!important;}
+/*--- usuarios ---*/
+#icon-90.usuarios{background-position:0px -130px!important;}
+/*--- cerrar_sesion ---*/
+#icon-90.cerrar_sesion{background-position:0px -260px!important;}
+/*--- permisos---*/
+#icon-90.permisos{background-position:0px -390px!important;}
+/*--- perfiles---*/
+#icon-90.perfiles{background-position:0px -520px!important;}
+/*--- procesos ---*/
+#icon-90.procesos{background-position:0px -650px!important;}
+/*--- categoria ---*/
+#icon-90.categoria{background-position:0px -780px!important;}
+/*--- carpeta ---*/
+#icon-90.carpeta{background-position:0px -910px!important;}
+/*--- entrar ---*/
+#icon-90.entrar{background-position:0px -1040px!important;}
+/*--- ayuda ---*/
+#icon-90.ayuda{background-position:0px -1170px!important;}
+/*--- idioma ---*/
+#icon-90.idioma{background-position:0px -1300px!important;}
+/*--- enviar ---*/
+#icon-90.enviar{background-position:0px -1430px!important;}
+/*--- cancelar ---*/
+#icon-90.cancelar{background-position:0px -1560px!important;}
+/*--- aceptar ---*/
+#icon-90.aceptar{background-position:0px -1690px!important;}
+/*--- guardar ---*/
+#icon-90.guardar{background-position:0px -1820px!important;}
+/*--- rechazar ---*/
+#icon-90.rechazar{background-position:0px -1950px!important;}
+/*--- proceso ---*/
+#icon-90.proceso{background-position:0px -2080px!important;}
+/*--- auditoria ---*/
+#icon-90.auditoria{background-position:0px -2210px!important;}
+/*--- configuracion  ---*/
+#icon-90.configuracion {background-position:0px -2340px!important;}
+/*--- docu_rel ---*/
+#icon-90.docu_rel{background-position:0px -2470px!important;}
+/*--- reporte ---*/
+#icon-90.reporte{background-position:0px -2600px!important;}
+/*--- Listas de Distribución ---*/
+#icon-90.list_dist{background-position:0px -2730px!important;}
+/*--- consultar ---*/
+#icon-90.consultar{background-position:0px -2860px!important;}
+/*--- editar ---*/
+#icon-90.editar{background-position:0px -2990px!important;}
+/*--- eliminar ---*/
+#icon-90.eliminar{background-position:0px -3120px!important;}
+/*--- boletin ---*/
+#icon-90.boletin{background-position:0px -3250px!important;}
+/*---organigrama ---*/
+#icon-90.organigrama{background-position:0px -3380px!important;}
+/*--- vista_previa ---*/
+#icon-90.vista_previa{background-position:0px -3510px!important;}
+/*--- descargar ---*/
+#icon-90.descargar{background-position:0px -3640px!important;}
+/*--- subir ---*/
+#icon-90.subir{background-position:0px -3770px!important;}
+/*--- notificacion ---*/
+#icon-90.notificacion{background-position:0px -3900px!important;}
+/*--- cambiar_flujo ---*/
+#icon-90.cambiar_flujo{background-position:0px -4030px!important;}
+/*--- cargas ---*/
+#icon-90.cargas{background-position:0px -4160px!important;}
+/*--- evidencia ---*/
+#icon-90.evidencia{background-position:0px -4290px!important;}
+/*--- control ---*/
+#icon-90.control{background-position:0px -4420px!important;}
+/*--- criesgo ---*/
+#icon-90.riesgo{background-position:0px -4550px!important;}
+/*--- Viaticos ---*/
+#icon-90.viaticos{background-position:0px -4680px!important;}
+/*--- compras ---*/
+#icon-90.compras{background-position:0px -4810px!important;}
+/*--- gastos_fijos ---*/
+#icon-90.gastos_fijos{background-position:0px -4940px!important;}
+/*--- caja_chica ---*/
+#icon-90.caja_chica{background-position:0px -5070px!important;}
+/*--- roles ---*/
+#icon-90.roles{background-position:0px -5200px!important;}
+/*--- expediente ---*/
+#icon-90.expediente{background-position:0px -5330px!important;}
+/*--- pdf ---*/
+#icon-90.pdf{background-position:0px -5460px!important;}
+/*--- excel ---*/
+#icon-90.excel{background-position:0px -5590px!important;}
+/*--- imagen ---*/
+#icon-90.imagen{background-position:0px -5720px!important;}
+/*--- zip ---*/
+#icon-90.zip{background-position:0px -5850px!important;}
+/*--- word ---*/
+#icon-90.word{background-position:0px -5980px!important;}
+/*--- power_point ---*/
+#icon-90.power_point{background-position:0px -6110px!important;}
+/*--- xml ---*/
+#icon-90.xml{background-position:0px -6240px!important;}
+/*--- agregar ---*/
+#icon-90.agregar{background-position:0px -6370px!important;}
+/*--- nuevo ---*/
+#icon-90.nuevo{background-position:0px -6500px!important;}
+/*--- cotejo ---*/
+#icon-90.cotejo{background-position:0px -6630px!important;}
+/*--- pendientes ---*/
+#icon-90.pendientes{background-position:0px -6760px!important;}
+/*--- solicitud_aprobada ---*/
+#icon-90.solicitud_aprobada{background-position:0px -6890px!important;}
+/*--- solicitud_enviada ---*/
+#icon-90.solicitud_enviada{background-position:0px -7020px!important;}
+/*--- solicitud_recibida ---*/
+#icon-90.solicitud_recibida{background-position:0px -7150px!important;}
+/*--- certificados de origen ---*/
+#icon-90.certificado_origen{background-position:0px -7280px!important;}
+/*--- hitorial ---*/
+#icon-90.historial{background-position:0px -7410px!important;}
+/*--- cerrar ---*/
+#icon-90.cerrar{background-position:0px -7540px!important;}
+/*--- warning ---*/
+#icon-90.warning{background-position:0px -7670px!important;}
+/*--- success ---*/
+#icon-90.success{background-position:0px -7800px!important;}
+/*--- error ---*/
+#icon-90.error{background-position:0px -7930px!important;}
+/*--- informacion ---*/
+#icon-90.informacion{background-position:0px -8060px!important;}
+/*--- actualizar ---*/
+#icon-90.actualizar{background-position:0px -8190px!important;}
+/*--- validar ---*/
+#icon-90.validar{background-position:0px -8320px!important;}
+/*--- pagar ---*/
+#icon-90.pagar{background-position:0px -8450px!important;}
+/*--- comprobar ---*/
+#icon-90.comprobar{background-position:0px -8580px!important;}
+/*--- semaforo rojo ---*/
+#icon-90.semaforo_rojo{background-position:0px -8710px!important;}
+/*--- semaforo_amarillo ---*/
+#icon-90.semaforo_amarillo{background-position:0px -8840px!important;}
+/*--- semaforo_blanco ---*/
+#icon-90.semaforo_blanco{background-position:0px -8970px!important;}
+/*--- semaforo_verde ---*/
+#icon-90.semaforo_verde{background-position:0px -9100px!important;}
+/*--- score_card ---*/
+#icon-90.score_card{background-position:0px -9230px!important;}
+/*--- orden de compra ---*/
+#icon-90.orden_compra{background-position:0px -9360px!important;}
+/*--- lider de proyecto ---*/
+#icon-90.lider{background-position:0px -9490px!important;}
+/*--- tratado ---*/
+#icon-90.tratado{background-position:0px -9620px!important;}
+/*--- catalogos ---*/
+#icon-90.catalogo{background-position:0px -9750px!important;}
+/*--- capacitacion ---*/
+#icon-90.capacitacion{background-position:0px -9880px!important;}
+/*--- incidencia ---*/
+#icon-90.incidencia{background-position:0px -10010px!important;}
+/*--- inicio ---*/
+#icon-90.inicio{background-position:0px -10140px!important;}
+/*--- buscar ---*/
+#icon-90.buscar{background-position:0px -10270px!important;}
+/*--- data_stage ---*/
+#icon-90.data_stage{background-position:0px -10400px!important;}
+/*--- edocuments ---*/
+#icon-90.edocuments{background-position:0px -10530px!important;}
+/*--- imprimir ---*/
+#icon-90.imprimir{background-position:0px -10660px!important;}
+/*--- propuesta ---*/
+#icon-90.propuesta{background-position:0px -10790px!important;}
+/*--- plan_pago ---*/
+#icon-90.plan_pago{background-position:0px -10920px!important;}
+/*--- plan_ejec ---*/
+#icon-90.plan_ejec{background-position:0px -11050px!important;}
+/*--- info_final ---*/
+#icon-90.info_final{background-position:0px -11180px!important;}
+/*--- encuesta ---*/
+#icon-90.encuesta{background-position:0px -11310px!important;}
+/*--- facturacion y pagos ---*/
+#icon-90.facturacion{background-position:0px -11440px!important;}
+/*--- cierre_folio ---*/
+#icon-90.cierre_folio{background-position:0px -11570px!important;}
+/*--- datos_fisc ---*/
+#icon-90.datos_fisc{background-position:0px -11700px!important;}
+/*--- pago_confirmado ---*/
+#icon-90.pago_confirmado{background-position:0px -11830px!important;}
+/*--- pago_x_confirmar ---*/
+#icon-90.pago_x_confirmar{background-position:0px -11960px!important;}
+/*--- activos_fijos ---*/
+#icon-90.activos_fijos{background-position:0px -12090px!important;}
+/*--- pc ---*/
+#icon-90.pc{background-position:0px -12220px!important;}
+/*--- marca ---*/
+#icon-90.marca{background-position:0px -12350px!important;}
+/*--- modelo ---*/
+#icon-90.modelo{background-position:0px -12480px!important;}
+/*--- proveedor ---*/
+#icon-90.proveedor{background-position:0px -12610px!important;}
+/*--- asig_equipo ---*/
+#icon-90.asig_equipo{background-position:0px -12740px!important;}
+/*--- ticket ---*/
+#icon-90.ticket{background-position:0px -12870px!important;}
+/*--- licencia ---*/
+#icon-90.licencia{background-position:0px -13000px!important;}
+/*--- empleado ---*/
+#icon-90.empleado{background-position:0px -13130px!important;}
+/*--- modificar ---*/
+#icon-90.modificar{background-position:0px -13260px!important;}
+/*--- agregar_carpeta ---*/
+#icon-90.agregar_carpeta{background-position:0px -13390px!important;}
+/*--- calendario ---*/
+#icon-90.calendario{background-position:0px -13520px!important;}
+/*--- doc_siguiente ---*/
+#icon-90.doc_siguiente{background-position:0px -13650px!important;}
+/*--- buscar_usuario ---*/
+#icon-90.buscar_usuario{background-position:0px -13780px!important;}
+/*--- adjuntar ---*/
+#icon-90.adjuntar{background-position:0px -13910px!important;}
+
+
+.cursor-link{cursor:pointer;}
+
+
+
+
+
+
+
+
+
+/*-------------------------------------- ANIMATIONS -----------------------------------------------*/
+.animation-ico{
+	
+	-webkit-transition: left 0.2s  linear;
+	-webkit-transition-property:background;
+	-moz-transition: left 0.2s linear;
+	-moz-transition-property:background;
+	-o-transition: left 0.2s  linear;
+	-o-transition-property:background;
+	-ms-transition: left 0.2s linear;
+	-ms-transition-property:;
+	transition: left 0.2s linear;
+	transition-property:background;
+
+}
+.animation-ico2{
+	
+	-webkit-transition: left 0.3s ease-in-out;
+	-webkit-transition-property:background;
+	-moz-transition: left 0.3s ease-in-out;
+	-moz-transition-property:background;
+	-o-transition: left 0.3s  ease-in-out;
+	-o-transition-property:background;
+	-ms-transition: left 0.3s ease-in-out;
+	-ms-transition-property:;
+	transition: left 0.3s ease-in-out;
+	transition-property:background;
+
+}
+

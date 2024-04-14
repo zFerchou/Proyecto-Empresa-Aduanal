@@ -1,0 +1,18 @@
+﻿#myBtn {
+    background: #85c555;
+    background: -moz-linear-gradient(top, #85c555, #7fc44b);
+    background: linear-gradient(to bottom, #85c555, #7fc44b);
+    background: -webkit-gradient(linear, 0% 50%, 0% 60%, from(#85c555), to(#7fc44b));
+    border: 1px solid #90d25e;
+    color: #f8f8f8;
+}
+
+
+.green {
+    background-color: green;
+}
+
+
+
+
+/* Agrega aquí tus estilos adicionales */

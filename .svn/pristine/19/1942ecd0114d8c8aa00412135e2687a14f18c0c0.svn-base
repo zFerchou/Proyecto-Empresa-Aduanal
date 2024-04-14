@@ -1,0 +1,142 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.Script.Serialization;
+using System.Web.Script.Services;
+using System.Web.Services;
+
+public partial class Configuracion_Implementador_sistema : System.Web.UI.Page
+{
+    private SqlConnection conn;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            Master.generaHeader("../../");
+        }
+    }
+
+    [WebMethod]
+    public static string ObtenerNumeroHistoriasAgendadas()
+    {
+        int numeroHistorias = 0;
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSGICE"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tHistoriasALiberar WHERE idEstatus = 4", conn);
+            numeroHistorias = (int)cmd.ExecuteScalar();
+            conn.Close();
+        }
+        return numeroHistorias.ToString(); // Convertir el número a una cadena antes de devolverlo
+    }
+
+    [WebMethod]
+    public static string ObtenerNumeroHistoriasLiberadas()
+    {
+        int numeroHistorias = 0;
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSGICE"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tHistoriasALiberar WHERE idEstatus = 6", conn);
+            numeroHistorias = (int)cmd.ExecuteScalar();
+            conn.Close();
+        }
+        return numeroHistorias.ToString(); // Convertir el número a una cadena antes de devolverlo
+    }
+
+    // Seleccion de datos para la tabla
+    [WebMethod]
+    public static string ObtenerHistoriasAgendadas()
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSGICE"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select h.idHistoriasALiberar, r.idReporte, r.descripcion, g.nomGrupo, h.puntosDeHistoria, h.fechaPropuestaOwner from tERPGrupo as g  inner join tReporte as R On R.idERPGrupo= g.idERPGrupo inner Join tHistoriasALiberar as H On R.idReporte=H.idReporte  inner Join cSistemas as S On H.idSistema=S.idSistema where h.idEstatus=4", conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+
+            // Convertir el DataTable a una lista de objetos JSON
+            var jsonData = new List<Dictionary<string, object>>();
+            foreach (DataRow row in dt.Rows)
+            {
+                var dict = new Dictionary<string, object>();
+                foreach (DataColumn col in dt.Columns)
+                {
+                    dict[col.ColumnName] = row[col.ColumnName]; // Acceder al valor por nombre de columna
+                }
+                jsonData.Add(dict);
+            }
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(jsonData);
+        }
+    }
+
+
+
+    [WebMethod]
+    public static string ObtenerHistoriasNoAgendadas()
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSGICE"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select h.idHistoriasALiberar, r.idReporte, r.descripcion, g.nomGrupo, h.puntosDeHistoria, h.fechaPropuestaOwner from tERPGrupo as g  inner join tReporte as R On R.idERPGrupo= g.idERPGrupo inner Join tHistoriasALiberar as H On R.idReporte=H.idReporte  inner Join cSistemas as S On H.idSistema=S.idSistema where h.idEstatus=5", conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+
+            // Convertir el DataTable a una lista de objetos JSON
+            var jsonData = new List<Dictionary<string, object>>();
+            foreach (DataRow row in dt.Rows)
+            {
+                var dict = new Dictionary<string, object>();
+                foreach (DataColumn col in dt.Columns)
+                {
+                    dict[col.ColumnName] = row[col.ColumnName]; // Acceder al valor por nombre de columna
+                }
+                jsonData.Add(dict);
+            }
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(jsonData);
+        }
+    }
+
+
+    [WebMethod]
+    public static string ObtenerHistoriasLiberadas()
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSGICE"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select h.idHistoriasALiberar, r.idReporte, r.descripcion, g.nomGrupo, h.puntosDeHistoria, h.fechaPropuestaOwner, h.fechaPropuestaImplement from tERPGrupo as g  inner join tReporte as R On R.idERPGrupo= g.idERPGrupo inner Join tHistoriasALiberar as H On R.idReporte=H.idReporte  inner Join cSistemas as S On H.idSistema=S.idSistema where h.idEstatus=6", conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+
+            // Convertir el DataTable a una lista de objetos JSON
+            var jsonData = new List<Dictionary<string, object>>();
+            foreach (DataRow row in dt.Rows)
+            {
+                var dict = new Dictionary<string, object>();
+                foreach (DataColumn col in dt.Columns)
+                {
+                    dict[col.ColumnName] = row[col.ColumnName]; // Acceder al valor por nombre de columna
+                }
+                jsonData.Add(dict);
+            }
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(jsonData);
+        }
+    }
+}

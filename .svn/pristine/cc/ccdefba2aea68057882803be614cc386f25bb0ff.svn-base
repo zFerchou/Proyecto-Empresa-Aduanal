@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+  Para obtener más información sobre cómo configurar la aplicación de ASP.NET, visite
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <appSettings>
+    <add key="keyUrl" value="https://www.nadconsultoria.com/ERPManagement/"/>
+  </appSettings>
+  <connectionStrings>
+    <add name="ApplicationServices" connectionString="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true" providerName="System.Data.SqlClient"/>
+    <add name="DBRHConnectionString" connectionString="Data Source=3.234.31.117;Initial Catalog=DBSGRH_ERP;Persist Security Info=True;User ID=noah_arredondo;Password=ArredondoTorres1416*-*; MultipleActiveResultSets=True;Application Name=.Net Management" providerName="System.Data.SqlClient"/>
+    <add name="DBSGICE" connectionString="Data Source=3.234.31.117;Initial Catalog=DBSGICE_ERP;Persist Security Info=True;User ID=noah_arredondo;Password=ArredondoTorres1416*-*; MultipleActiveResultSets=True;Application Name=.Net Management" providerName="System.Data.SqlClient"/>
+    <add name="DBSGICEConnectionString" connectionString="Data Source=3.234.31.117;Initial Catalog=DBSGICE_ERP;User ID=noah_arredondo;Password=ArredondoTorres1416*-*; MultipleActiveResultSets=True;Application Name=.Net Management" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <system.web.extensions>
+    <scripting>
+      <webServices>
+        <jsonSerialization maxJsonLength="900000000"/>
+      </webServices>
+    </scripting>
+  </system.web.extensions>
+  <!--
+    Para obtener una descripción de los cambios de web.config, vea http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    Los siguientes atributos se pueden establecer en la etiqueta <httpRuntime>.
+      <system.Web>
+        <httpRuntime targetFramework="4.8.1" />
+      </system.Web>
+  -->
+  <system.web>
+    <compilation debug="true" targetFramework="4.8">
+      <assemblies>
+        <add assembly="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+      </assemblies>
+    </compilation>
+    <authentication mode="Forms">
+      <forms loginUrl="~/Account/Login.aspx" timeout="2880"/>
+    </authentication>
+    <membership>
+      <providers>
+        <clear/>
+        <add name="AspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="ApplicationServices" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" applicationName="/"/>
+      </providers>
+    </membership>
+    <profile>
+      <providers>
+        <clear/>
+        <add name="AspNetSqlProfileProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="ApplicationServices" applicationName="/"/>
+      </providers>
+    </profile>
+    <roleManager enabled="false">
+      <providers>
+        <clear/>
+        <add name="AspNetSqlRoleProvider" type="System.Web.Security.SqlRoleProvider" connectionStringName="ApplicationServices" applicationName="/"/>
+        <add name="AspNetWindowsTokenRoleProvider" type="System.Web.Security.WindowsTokenRoleProvider" applicationName="/"/>
+      </providers>
+    </roleManager>
+    <customErrors mode="Off"/>
+    <pages controlRenderingCompatibilityVersion="4.0"/>
+  </system.web>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true"/>
+    <defaultDocument>
+      <files>
+        <add value="Index.aspx"/>
+      </files>
+    </defaultDocument>
+    <security>
+      <requestFiltering>
+        <fileExtensions>
+          <add fileExtension=".msg" allowed="true"/>
+        </fileExtensions>
+      </requestFiltering>
+    </security>
+  </system.webServer>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="EnvioCorreoSoap3"/>
+        <binding name="EnvioCorreoSoap">
+          <security mode="Transport"/>
+        </binding>
+        <binding name="EnvioCorreoSoap1"/>
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="https://nadqro.nadconsultoria.com/ServicioCorreoProd/EnvioCorreo.asmx" binding="basicHttpBinding" bindingConfiguration="EnvioCorreoSoap" contract="EnviarCorreoWS.EnvioCorreoSoap" name="EnvioCorreoSoap"/>
+    </client>
+  </system.serviceModel>
+</configuration>

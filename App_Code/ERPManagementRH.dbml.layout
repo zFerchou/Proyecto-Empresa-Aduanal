@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 8.5" name="ERPManagementRH">
+  <DataContextMoniker Name="/ERPManagementRHDataContext" />
+  <nestedChildShapes>
+    <classShape Id="01cf15cd-cef1-49b4-8841-9ff3dbe0ea45" absoluteBounds="1.25, 1.25, 2, 6.0015283203125">
+      <DataClassMoniker Name="/ERPManagementRHDataContext/tEmpleado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb5283e4-cc00-4d1d-bb23-62cca9fa22a2" absoluteBounds="1.2650000000000001, 1.71, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1f39456-99e3-490c-92ae-15005dd99d1b" absoluteBounds="3.875, 1.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ERPManagementRHDataContext/tUsuarios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9153a6ac-1fcf-4eb2-8148-e48663d7401a" absoluteBounds="3.8899999999999997, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0d9d958b-4fb2-4036-b1c1-feb128855837" absoluteBounds="3.875, 3.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ERPManagementRHDataContext/tCorreoElectronicoEmpleado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b407f29-bdc2-4275-bf0d-580029834dcf" absoluteBounds="3.8899999999999997, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 3.94314697265625); (3.875 : 3.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ERPManagementRHDataContext/tEmpleado/tEmpleado_tCorreoElectronicoEmpleado" />
+      <nodes>
+        <classShapeMoniker Id="01cf15cd-cef1-49b4-8841-9ff3dbe0ea45" />
+        <classShapeMoniker Id="0d9d958b-4fb2-4036-b1c1-feb128855837" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="205bbc1b-1724-4d12-9a4a-8ea6b195dd7f" absoluteBounds="3.875, 4.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ERPManagementRHDataContext/vUsuarioAcceso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a6d061a-574d-4cbe-ab2a-73b4fa728123" absoluteBounds="3.89, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="766169fd-4b25-421e-bd88-3b973b09b747" absoluteBounds="6, 1.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/ERPManagementRHDataContext/view_ValidarTipoUsuarioAreaGrupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd254f6c-1ccb-40ce-a0cc-7a903241f36f" absoluteBounds="6.015, 1.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21ee14c8-cd55-4b1e-a0ff-000be5d50e20" absoluteBounds="6, 3.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/ERPManagementRHDataContext/cEmpresas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3fe24ab1-9087-40cf-a0ed-60eda3ae5a76" absoluteBounds="6.015, 3.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7 : 5.3381982421875); (7 : 7.20591471354167); (3.25 : 7.20591471354167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ERPManagementRHDataContext/cEmpresas/cEmpresas_tEmpleado" />
+      <nodes>
+        <classShapeMoniker Id="21ee14c8-cd55-4b1e-a0ff-000be5d50e20" />
+        <classShapeMoniker Id="01cf15cd-cef1-49b4-8841-9ff3dbe0ea45" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="45578058-b8dd-4dc6-a199-f1f68fd8a30c" absoluteBounds="9.375, 2.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/ERPManagementRHDataContext/cGrupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6cd34c0-cbc6-4578-92cd-346a20d3dce9" absoluteBounds="9.39, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.375 : 3.59699625651042); (8 : 3.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ERPManagementRHDataContext/cGrupo/cGrupo_cEmpresas" />
+      <nodes>
+        <classShapeMoniker Id="45578058-b8dd-4dc6-a199-f1f68fd8a30c" />
+        <classShapeMoniker Id="21ee14c8-cd55-4b1e-a0ff-000be5d50e20" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.375 : 3.42349812825521); (8 : 3.42349812825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ERPManagementRHDataContext/cGrupo/cGrupo_cEmpresas1" />
+      <nodes>
+        <classShapeMoniker Id="45578058-b8dd-4dc6-a199-f1f68fd8a30c" />
+        <classShapeMoniker Id="21ee14c8-cd55-4b1e-a0ff-000be5d50e20" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

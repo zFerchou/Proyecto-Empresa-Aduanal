@@ -1,0 +1,12 @@
+﻿#lblAsunto ,#lblFechaReporte, #lblFechaPropuesta,#lblDescripcion{
+   text-align: justify;
+   color: black;
+}
+
+.lblResponsables {
+    cursor: pointer;
+}
+
+.eliminar-apoyo {
+    cursor:pointer;
+}

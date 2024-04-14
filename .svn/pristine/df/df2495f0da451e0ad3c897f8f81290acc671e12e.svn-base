@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBSGRH" Class="ERPManagementRHDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=69.24.66.155;Initial Catalog=DBSGRH;Persist Security Info=True;User ID=adminlcadba" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DBRHConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tEmpleado" Member="tEmpleado">
+    <Type Name="tEmpleado">
+      <Column Name="idEmpleado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="apellidoPaterno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="apellidoMaterno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="fechaNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="curp" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="rfc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="nss" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="idEstadoCivil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="seguroVida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="estadoSalud" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="tipoSangre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="visa" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="pasaporte" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idEmpresa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPuesto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idNacionalidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idDomicilio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idUbicacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="critico" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="fechaContrato" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idGerente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idReligion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tEmpleado_tCorreoElectronicoEmpleado" Member="tCorreoElectronicoEmpleado" ThisKey="idEmpleado" OtherKey="idEmpleado" Type="tCorreoElectronicoEmpleado" />
+      <Association Name="cEmpresas_tEmpleado" Member="cEmpresas" ThisKey="idEmpresa" OtherKey="idEmpresa" Type="cEmpresas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tUsuarios" Member="tUsuarios">
+    <Type Name="tUsuarios">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="contrasena" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idEstatusUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTipoUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCorreoElectronicoEmpleado" Member="tCorreoElectronicoEmpleado">
+    <Type Name="tCorreoElectronicoEmpleado">
+      <Column Name="idTipoCorreoElectronico" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idEmpleado" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="correoElectronico" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tEmpleado_tCorreoElectronicoEmpleado" Member="tEmpleado" ThisKey="idEmpleado" OtherKey="idEmpleado" Type="tEmpleado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUsuarioAcceso" Member="vUsuarioAcceso">
+    <Type Name="vUsuarioAcceso">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="apellidoPaterno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="apellidoMaterno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="contrasena" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="correoElectronico" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idEstatusUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ValidarTipoUsuarioAreaGrupo" Member="view_ValidarTipoUsuarioAreaGrupo">
+    <Type Name="view_ValidarTipoUsuarioAreaGrupo">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="grupo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idGrupo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idArea" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cEmpresas" Member="cEmpresas">
+    <Type Name="cEmpresas">
+      <Column Name="idEmpresa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="id_grupo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rfc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_contacto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="logotipo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="cEmpresas_tEmpleado" Member="tEmpleado" ThisKey="idEmpresa" OtherKey="idEmpresa" Type="tEmpleado" />
+      <Association Name="cGrupo_cEmpresas" Member="cGrupo" ThisKey="id_grupo" OtherKey="id_grupo" Type="cGrupo" IsForeignKey="true" />
+      <Association Name="cGrupo_cEmpresas1" Member="cGrupo1" ThisKey="id_grupo" OtherKey="id_grupo" Type="cGrupo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cGrupo" Member="cGrupo">
+    <Type Name="cGrupo">
+      <Column Name="id_grupo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="grupo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="cGrupo_cEmpresas" Member="cEmpresas" ThisKey="id_grupo" OtherKey="id_grupo" Type="cEmpresas" />
+      <Association Name="cGrupo_cEmpresas1" Member="cEmpresas1" ThisKey="id_grupo" OtherKey="id_grupo" Type="cEmpresas" />
+    </Type>
+  </Table>
+</Database>
